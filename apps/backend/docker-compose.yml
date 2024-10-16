@@ -1,0 +1,8 @@
+services:
+  tbox-app:
+    image: trailer-box:latest
+    env_file:
+
+    volumes:
+      - /tbox/db:/app/.local
+      - /tbox/media:/app/.media_files
