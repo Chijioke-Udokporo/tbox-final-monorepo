@@ -1,4 +1,4 @@
-import { IUsers } from "./modules/users/users.model";
+import { type IUsers } from "./modules/users/users.model";
 import { Hono } from "hono";
 import { TrailerRoutes } from "./modules/trailers/trailer.routes";
 import { AdminRoutes, FTPRouter } from "./modules/general";
@@ -6,7 +6,7 @@ import { AuthRoutes } from "./modules/auth/auth.routes";
 import { SecurityMiddleware } from "./security/security.middleware";
 import AuthMiddleware from "./security/auth.middleware";
 import { UserRoutes } from "./modules/users/users.routes";
-import { ITrailer } from "./modules/trailers/trailer.model";
+import { type ITrailer } from "./modules/trailers/trailer.model";
 
 const app = new Hono()
   .basePath("/api")
