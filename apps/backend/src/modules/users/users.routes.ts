@@ -3,12 +3,10 @@ import { zValidator } from "@hono/zod-validator";
 import { responseHandler } from "../../utils/response";
 import { AppConstant } from "../../utils/constant";
 import { z } from "zod";
-import { createStorage } from "unstorage";
 import { IUsers, UsersSchema } from "./users.model";
 import { UserService } from "./users.service";
 import { dbPrisma } from "../../lib/prisma";
 
-const storage = createStorage(/* opts */);
 const service = new UserService(dbPrisma);
 
 export const UserRoutes = new Hono<{
