@@ -1,0 +1,26 @@
+.slide-down-enter-from,
+.slide-down-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+
+.slide-down-enter-active,
+.slide-down-leave-active {
+  transition: all 0.2s ease-in-out;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+  transform: translateX(0);
+}
+.page-enter-from {
+  transform: translateX(2%);
+  opacity: 0;
+  filter: blur(0.8rem);
+}
+.page-leave-to {
+  transform: translateX(-2%);
+  opacity: 0;
+  filter: blur(0.8rem);
+}

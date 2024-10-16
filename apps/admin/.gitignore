@@ -1,0 +1,23 @@
+
+node_modules
+build
+dist
+.output
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+.local
+.media_files
+.nuxt
+.output

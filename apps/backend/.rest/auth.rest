@@ -1,0 +1,20 @@
+post http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "chijioke.udokporo@codesordinate.studio",
+  "password": "Sweetness@1987"
+}
+
+###
+
+post http://localhost:3000/api/auth/create-admin
+Content-Type: application/json
+
+{
+  "firstName": "Chijioke",
+  "lastName": "Udokporo",
+  "email": "chijioke.udokporo@codesordinate.studio",
+  "password": "Sweetness@1987"
+}
+

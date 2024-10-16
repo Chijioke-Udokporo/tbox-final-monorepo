@@ -1,0 +1,19 @@
+{
+  "name": "tbox-mono",
+  "module": "index.ts",
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "bun run --filter='*' dev",
+    "dev:fe": "bun run --filter='@trailer-box/admin' dev",
+    "dev:be": "bun run --filter='@trailer-box/server' dev"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

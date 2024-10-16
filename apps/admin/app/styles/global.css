@@ -1,0 +1,27 @@
+* {
+  font-family: "Product Sans", "Rethink Sans", sans-serif;
+  font-style: normal;
+}
+
+html,
+body {
+  font-family: "Product Sans", "Rethink Sans", sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  @apply bg-base-100;
+}
+
+.map {
+  background-image: url("https://agustoportals.sfo3.digitaloceanspaces.com/bg-videos/mapBg.png");
+  @apply bg-center;
+}
+
+.bgOne {
+  background-image: url("/public/bg-one.jpg");
+  @apply bg-cover;
+}
+
+.menu-link.router-link-active,
+.menu-link:hover {
+  @apply text-secondary transition-all px-1;
+}

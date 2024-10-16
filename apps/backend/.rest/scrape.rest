@@ -1,0 +1,16 @@
+POST http://localhost:3000/api/admin/scrape/tomatoes
+Content-Type: application/json
+
+{
+  "tomatoesUrl": "https://www.rottentomatoes.com/m/red_one"
+}
+
+###
+
+POST http://localhost:3000/api/admin/scrape/imdb
+Content-Type: application/json
+
+{
+  "imdbUrl": "https://www.imdb.com/title/tt14948432/"
+}
+

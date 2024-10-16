@@ -1,0 +1,5 @@
+node_modules
+README.md
+bun.lockb
+docker-compose.yml
+.db

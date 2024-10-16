@@ -1,0 +1,74 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator zod {
+  provider       = "zod-prisma-types"
+  output         = "../src/zod-schema"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model casts {
+  id String @id @default(cuid())
+  name String? @unique
+  image String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model favorites {
+  id String @id @default(cuid())
+  userId String
+  user users @relation(fields: [userId], references: [id])
+  trailerId String
+  trailer trailers @relation(fields: [trailerId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model trailers {
+  id String @id @default(cuid())
+  title String
+  mediaId String
+  poster String?
+  alias String?
+  releaseDate DateTime?
+  director String?
+  runtime String?
+  rating String?
+  plot String?
+  tomatometer String?
+  audienceScore String?
+  genre String?
+  casts String?
+  writers String?
+  isPublished Boolean? @default(false)
+  favorites favorites[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model users {
+  id String @id @default(cuid())
+  firstName String
+  lastName String
+  email String @unique
+  role String @default("user")
+  password String
+  favorites favorites[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+
+

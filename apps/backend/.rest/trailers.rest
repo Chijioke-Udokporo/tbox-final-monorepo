@@ -1,0 +1,35 @@
+GET https://www.omdbapi.com/?i=tt3896198&apikey=55e55925
+
+###
+
+GET http://localhost:3000/api/trailers
+
+
+###˜
+GET http://localhost:3000/api/trailers/cm28wmh0c0000102bkfubhx3o
+
+### 
+POST http://localhost:3000/api/trailers
+content-type: application/json
+
+{
+  "title": "Trailer 1",
+  "description": "Description 1",
+  "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+}
+
+### 
+PATCH http://localhost:3000/api/trailers/:id
+content-type: application/json
+
+{
+  "id": "1",
+  "trailer": {
+    "title": "Trailer 1",
+    "description": "Description 1",
+    "videoUrl": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+  }
+}
+
+###
+DELETE http://localhost:3000/api/trailers/:id
