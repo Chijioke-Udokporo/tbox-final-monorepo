@@ -5,10 +5,8 @@ import { responseHandler } from "../../utils/response";
 import { TrailerController } from "./trailer.controller";
 import { AppConstant } from "../../utils/constant";
 import { z } from "zod";
-import { createStorage } from "unstorage";
 import { IUsers } from "../users/users.model";
 
-const storage = createStorage(/* opts */);
 const controller = new TrailerController();
 
 export const TrailerRoutes = new Hono<{
