@@ -1,5 +1,7 @@
 # deps
 node_modules/
 .local
+.media_files
+.m
 dist
 build

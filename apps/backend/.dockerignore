@@ -4,6 +4,7 @@ bun.lockb
 docker-compose.yml
 .dockerignore
 .local
+.media_files
 .env
 .gitignore
 dist
