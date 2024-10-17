@@ -1,7 +1,9 @@
 {
   "name": "@trailer-box/streamer",
   "scripts": {
-    "dev": "bun run --hot src/index.ts"
+    "dev": "bun run --hot src/index.ts",
+    "build": "bun build src/index.ts --outdir dist  --target bun --sourcemap=linked --minify",
+    "start": "bun run dist/index.js"
   },
   "dependencies": {
     "hono": "^4.6.3",
