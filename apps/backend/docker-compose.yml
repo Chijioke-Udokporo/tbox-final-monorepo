@@ -1,8 +1,6 @@
 services:
   tbox-app:
-    image: ghcr.io/chijioke-udokporo/tbox-final-monorepo:sha256-0f081ffa80fb7242a7abdd84e0647497dd42252b0ef9276f6b7d885adafe2209.sig
-    env_file:
-
-    volumes:
-      - /tbox/db:/app/.local
-      - /tbox/media:/app/.media_files
+    image: tbox/backending:latest
+    #volumes:
+    #  - ~/Downloads/tbox/db:/app/.local
+    #  - ~/Downloads/tbox/media:/app/.media_files

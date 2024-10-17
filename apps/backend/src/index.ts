@@ -7,6 +7,7 @@ import { SecurityMiddleware } from "./security/security.middleware";
 import AuthMiddleware from "./security/auth.middleware";
 import { UserRoutes } from "./modules/users/users.routes";
 import { type ITrailer } from "./modules/trailers/trailer.model";
+import AppLogger from "./lib/consola";
 
 const app = new Hono()
   .basePath("/api")
@@ -26,6 +27,7 @@ const AppRouter = app
   .route("/users", UserRoutes);
 
 export default app;
+AppLogger.success("Server Started - http://localhost");
 
 export type AppRouter = typeof AppRouter;
 export { ITrailer, IUsers };

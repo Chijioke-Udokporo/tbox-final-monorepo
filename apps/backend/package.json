@@ -2,9 +2,9 @@
   "name": "@trailer-box/server",
   "scripts": {
     "dev": "bun run --hot src/index.ts",
-    "postinstall": "prisma generate",
-    "build": "bun build src/index.ts --outdir dist  --target bun",
-    "start": "bun run dist/index.js"
+    "build": "bun build src/index.ts --outdir dist  --target bun --sourcemap=linked --minify",
+    "start": "bun run dist/index.js",
+    "docker": "docker build -t tbox/backending:latest . "
   },
   "dependencies": {
     "@hono/zod-validator": "^0.4.1",

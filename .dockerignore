@@ -3,3 +3,6 @@ README.md
 bun.lockb
 docker-compose.yml
 .db
+.local
+.env
+.gitignore
