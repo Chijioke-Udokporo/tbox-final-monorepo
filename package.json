@@ -6,6 +6,7 @@
     "apps/*"
   ],
   "scripts": {
+    "expo":"bun run --filter='@trailer-box/mobile' start",
     "dev": "bun run --filter='*' dev",
     "build": "bun run --filter='*' build",
     "start": "bun run --filter='*' start",

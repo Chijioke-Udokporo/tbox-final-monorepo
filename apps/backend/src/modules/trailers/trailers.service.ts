@@ -31,7 +31,7 @@ export class TrailerService {
         where,
         skip: offset,
         take: Number(limit),
-        orderBy,
+        orderBy: { ...orderBy, createdAt: "desc" },
       }),
       this.db.trailers.count({ where }),
     ]);
