@@ -39,6 +39,7 @@ export class TrailerService {
         const casts = JSON.parse(el.casts || "[]");
         const castIds = (await this.db.casts.findMany({ where: { id: { in: casts } } })) as any;
         el.casts = castIds;
+        el.genre = JSON.parse(el.genre || "[]");
         return el;
       })
     );
