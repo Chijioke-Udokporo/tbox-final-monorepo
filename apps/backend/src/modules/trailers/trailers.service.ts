@@ -40,7 +40,10 @@ export class TrailerService {
       hasPrevPage,
       page: Number(page),
       limit: Number(limit),
-      docs: docs as any as ITrailer["select"][],
+      docs: docs?.map(async (el) => {
+        const casts = JSON.parse(el.casts || "[]");
+        return (await this.db.casts.findMany({ where: { id: { in: casts } } })) as any;
+      }) as any as ITrailer["select"][],
     };
   }
 
