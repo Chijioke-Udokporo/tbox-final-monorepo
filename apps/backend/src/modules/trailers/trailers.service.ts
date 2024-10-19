@@ -42,7 +42,9 @@ export class TrailerService {
       limit: Number(limit),
       docs: docs?.map(async (el) => {
         const casts = JSON.parse(el.casts || "[]");
-        return (await this.db.casts.findMany({ where: { id: { in: casts } } })) as any;
+        const castIds = (await this.db.casts.findMany({ where: { id: { in: casts } } })) as any;
+        el.casts = castIds;
+        return el;
       }) as any as ITrailer["select"][],
     };
   }
