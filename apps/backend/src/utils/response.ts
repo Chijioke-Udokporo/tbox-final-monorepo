@@ -86,7 +86,7 @@ export const responseHandler = async <T>(c: Context, next: T) => {
 
     return responseSuccess<typeof data>(c, data);
   } catch (error: any) {
-    //AppLogger.error(error?.message);
+    AppLogger.error(error?.message);
     return responseError(c, error);
   }
 };

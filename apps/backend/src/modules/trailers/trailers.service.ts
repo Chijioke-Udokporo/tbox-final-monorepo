@@ -33,6 +33,16 @@ export class TrailerService {
     const hasNextPage = Number(page) < totalPages;
     const hasPrevPage = Number(page) > 1;
 
+    //update casts
+    const newDocs = await Promise.all(
+      docs?.map(async (el) => {
+        const casts = JSON.parse(el.casts || "[]");
+        const castIds = (await this.db.casts.findMany({ where: { id: { in: casts } } })) as any;
+        el.casts = castIds;
+        return el;
+      })
+    );
+
     return {
       totalDocs,
       totalPages,
@@ -40,12 +50,7 @@ export class TrailerService {
       hasPrevPage,
       page: Number(page),
       limit: Number(limit),
-      docs: docs?.map(async (el) => {
-        const casts = JSON.parse(el.casts || "[]");
-        const castIds = (await this.db.casts.findMany({ where: { id: { in: casts } } })) as any;
-        el.casts = castIds;
-        return el;
-      }) as any as ITrailer["select"][],
+      docs: newDocs as any as ITrailer["select"][],
     };
   }
 
