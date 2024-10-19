@@ -21,13 +21,6 @@ export class TrailerService {
 
     const [docs, totalDocs] = await this.db.$transaction([
       this.db.trailers.findMany({
-        select: {
-          id: true,
-          title: true,
-          poster: true,
-          releaseDate: true,
-          isPublished: true,
-        },
         where,
         skip: offset,
         take: Number(limit),

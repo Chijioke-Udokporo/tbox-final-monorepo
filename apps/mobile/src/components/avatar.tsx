@@ -1,10 +1,11 @@
 import styled from "styled-components/native";
+import { Constants } from "../utils/constants";
 
 const Image = styled.Image`
   width: 35px;
   height: 35px;
   border-radius: 25px;
-  background-color: #d0d0d0;
+  background-color: ${Constants.Colors.dark.base_200};
   margin-bottom: 10px;
 `;
 

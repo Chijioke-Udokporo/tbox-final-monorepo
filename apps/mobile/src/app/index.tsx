@@ -11,14 +11,14 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <Input keyboardType="email-address" placeholder="Email" />
+      {/*   <Input keyboardType="email-address" placeholder="Email" />
       <Input secureTextEntry={true} placeholder="Password" />
       <Typo size="2xl" weight="bold">
         Hello World
       </Typo>
       <Button title="Hello World" width="60%" />
 
-      <Link href="tabs/trailers">Go to Trailers</Link>
+      <Link href="tabs/trailers">Go to Trailers</Link> */}
     </View>
   );
 }

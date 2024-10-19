@@ -1,8 +1,11 @@
 import { Avatar, Typo } from "@/src/components";
+import { Constants } from "@/src/utils/constants";
 import { SafeAreaView, View } from "react-native";
 import styled from "styled-components/native";
 
-const Wrapper = styled.View``;
+const Wrapper = styled.View`
+  padding-horizontal: ${Constants.Padding.horizontal}px;
+`;
 
 const Container = styled.View`
   flex-direction: row;

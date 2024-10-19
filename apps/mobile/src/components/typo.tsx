@@ -1,5 +1,6 @@
 import { Text, TextProps } from "react-native";
 import styled from "styled-components/native";
+import { Constants } from "../utils/constants";
 
 export const fontWeight = {
   bold: "700",
@@ -30,5 +31,5 @@ interface TypoProps extends TextProps {
 export const Typo = styled(Text)<TypoProps>`
   font-size: ${({ size }) => fontSize[size as keyof typeof fontSize] || fontSize.md};
   font-weight: ${({ weight }) => fontWeight[weight as keyof typeof fontWeight] || fontWeight.regular};
-  color: ${({ color }) => color || "#000"};
+  color: ${({ color }) => color || Constants.Colors.dark.base_content};
 `;

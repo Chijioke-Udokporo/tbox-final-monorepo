@@ -5,15 +5,17 @@ import { type Trailers } from "@/app";
 import dayjs from "dayjs";
 import { Constants } from "@/src/utils/constants";
 import { useEffect } from "react";
+import TrailerPoster from "./trailer-poster";
 
 export const Image = styled.Image`
   width: 100%;
   height: 250px;
-  background-color: #d0d0d0;
+  background-color: ${Constants.Colors.dark.base_200};
   background-size: contain;
 `;
 
 const Container = styled.View`
+  padding-horizontal: ${Constants.Padding.horizontal}px;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -24,9 +26,7 @@ const Box = styled.View`
   overflow: hidden;
   border-top-right-radius: 15px;
   border-top-left-radius: 15px;
-  border-width: 1px;
-  border-color: #f0f0f0;
-  width: 48%;
+  width: 47%;
   margin-bottom: 20px;
 `;
 
@@ -40,13 +40,14 @@ export const TrailerItem = ({ trailers }: { trailers: Trailers }) => {
     <Container>
       {trailers.map((trailer) => (
         <Box key={trailer.id}>
-          <Image source={{ uri: Constants.imageUrl(trailer.poster || "") }} />
+          {/*  <Image source={{ uri: Constants.imageUrl(trailer.poster || "") }} /> */}
+          <TrailerPoster uri={Constants.imageUrl(trailer.poster || "")} />
 
           <Wrap>
             <Typo size="sm" weight="semibold">
               {trailer.title}
             </Typo>
-            <Typo size="xs" weight="light">
+            <Typo size="xs" weight="light" color={Constants?.Colors?.dark.secondary}>
               {dayjs(trailer?.releaseDate).format("MMMM DD, YYYY")}
             </Typo>
           </Wrap>

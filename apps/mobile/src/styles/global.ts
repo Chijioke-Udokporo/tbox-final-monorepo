@@ -4,6 +4,7 @@ import { Constants } from "../utils/constants";
 export const globalStyles = StyleSheet.create({
   flex: {
     flex: 1,
+    backgroundColor: Constants.Colors.dark.base_100,
   },
 
   container: {
